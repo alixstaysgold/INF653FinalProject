@@ -8,10 +8,10 @@
         <select name="authorId" id="dropdown">
             <option value="0">Author</option>
             <?php foreach ($authors as $author) : ?>
-            <?php if ($authorId == $author['authorId']) { ?>
-                <option value="<?= $author['authorId'] ?>" selected>
+            <?php if ($authorId == $author['id']) { ?>
+                <option value="<?= $authorId['id'] ?>">
                     <?php } else { ?>
-                <option value="<?= $author['authorId'] ?>">
+                <option value="<?= $author['id'] ?>">
                     <?php } ?>
                     <?= $author['author'] ?>
                 </option> 
@@ -25,10 +25,10 @@
         <select name="class_id" id="dropdown">
             <option value="0">Category</option>
             <?php foreach ($categories as $category) : ?>
-            <?php if ($categoryId == $category['$categoryId']) { ?>
-                <option value="<?= $category['$categoryId'] ?>" selected>
+            <?php if ($categoryId == $category['$id']) { ?>
+                <option value="<?= $categoryId['$id'] ?>">
                     <?php } else { ?>
-                <option value="<?= $category['$categoryId'] ?>">
+                <option value="<?= $category['$id'] ?>">
                     <?php } ?>
                     <?= $category['category'] ?>
                 </option> 
