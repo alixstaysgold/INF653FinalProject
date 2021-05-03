@@ -14,7 +14,7 @@ $database = new Database();
 $db = $database->connect();
 
 // Instantiate quote object
-$author = new Authors($db);
+$author = new Author($db);
 
 // Get raw posted data
 $data = !empty((file_get_contents("php://input"))) ? json_decode(file_get_contents("php://input")) : die();

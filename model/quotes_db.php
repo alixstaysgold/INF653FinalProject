@@ -99,7 +99,7 @@
         public function read_by_cat_auth(){
                 //query
                 $query = 'SELECT 
-                    c.category, a.author, q.id,q.quote,
+                    c.category, a.author, q.id, q.quote,
                     q.authorid, q.categoryid 
                     FROM quotes q
                     INNER JOIN categories c ON q.categoryId = c.id
@@ -127,9 +127,9 @@
                     c.category, a.author
                     FROM quotes q 
                     INNER JOIN categories c
-                    ON q.categoryId = c.categoryId
+                    ON q.categoryId = c.id
                     INNER JOIN authors a
-                    ON q.authorId = a.authorId
+                    ON q.authorId = a.id
                     WHERE q.id = ?
                     LIMIT 0,1';
 
@@ -252,4 +252,31 @@
             }
             
            
+    
+
+                // limie
+                public function read_limit(){
+                //query
+                $query = 'SELECT c.category, a.author, q.id, q.quote,
+                    q.authorId, q.categoryId 
+                    FROM quotes q
+                    INNER JOIN categories c 
+                    ON q.categoryId = c.id
+                    INNER JOIN authors a 
+                    ON q.authorId = a.id
+                    LIMIT 0,?';
+
+                //prep
+                $stmt = $this->conn->prepare($query);
+
+                //bind
+                $stmt->bindValue(1,$this->limit, PDO::PARAM_INT);
+
+                //execute
+                $stmt->execute();
+
+                return $stmt;
+
+                }
+
     }

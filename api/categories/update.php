@@ -7,7 +7,7 @@ header('Access-Control-Allow-Headers: Access-Control-Allow-Headers,Content-Type,
 
 
 require('../../config/database.php');
-require('../../models/categories_db.php');
+require('../../model/categories_db.php');
 
 // Instantiate DB & Connect
 $database = new Database();

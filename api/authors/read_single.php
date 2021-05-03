@@ -11,7 +11,7 @@ $database = new Database();
 $db = $database->connect();
 
 // Instantiate quote object
-$author = new Authors($db);
+$author = new Author($db);
 
 // Get ID from URL
 $author->id = filter_input(INPUT_GET, 'id', FILTER_VALIDATE_INT);
