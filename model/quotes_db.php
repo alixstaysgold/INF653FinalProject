@@ -41,6 +41,87 @@
             return $stmt;
         }
 
+            //read by category
+        public function read_by_category(){
+            //query
+                $query = 'SELECT 
+                    c.category, a.author, q.id, q.quote,
+                    q.authorId, q.categoryId 
+                    FROM quotes q
+                    INNER JOIN categories c 
+                    ON q.categoryId = c.id
+                    INNER JOIN authors a 
+                    ON q.authorId = a.id
+                    WHERE 
+                    q.categoryId = :categoryId
+                    ORDER BY id ASC';
+            
+            //prep
+            $stmt = $this->conn->prepare($query);
+            //bind
+            $stmt->bindParam(':categoryId', $this->categoryId);
+
+            //execute
+            $stmt->execute();
+
+            return $stmt;
+            }
+
+             //read by author
+        public function read_by_author(){
+            //query
+                $query = 'SELECT 
+                    c.category, a.author, q.id, q.quote,
+                    q.authorId, q.categoryId 
+                    FROM quotes q
+                    INNER JOIN categories c 
+                    ON q.categoryId = c.id
+                    INNER JOIN 
+                    authors a ON q.authorId = a.id
+                    WHERE 
+                    q.authorId = :authorId
+                    ORDER BY id ASC';
+            
+            //prep
+            $stmt = $this->conn->prepare($query);
+
+            //bind
+            $stmt->bindParam(':authorId', $this->authorId);
+
+            //execute
+            $stmt->execute();
+
+            return $stmt;
+        }
+
+
+            //read by both
+        public function read_by_cat_auth(){
+                //query
+                $query = 'SELECT 
+                    c.category, a.author, q.id,q.quote,
+                    q.authorid, q.categoryid 
+                    FROM quotes q
+                    INNER JOIN categories c ON q.categoryId = c.id
+                    INNER JOIN authors a ON q.authorId = a.id
+                    WHERE q.authorId = :authorId 
+                    AND q.categoryId = :categoryId
+                    ORDER BY id ASC';
+            
+            //prep
+            $stmt = $this->conn->prepare($query);
+
+            //bind
+            $stmt->bindParam(':authorId', $this->authorId);
+            $stmt->bindParam(':categoryId', $this->categoryId);           
+
+            //execute
+            $stmt->execute();
+
+            return $stmt;
+            }
+
+            //read one
             public function read_single(){
                 $query = 'SELECT q.quote, q.id, q.categoryId, q.authorId, 
                     c.category, a.author
@@ -71,6 +152,8 @@
                 $this->category = $row['category'];
                 $this->author = $row['author'];
             }
+
+            //create new
 
             public function create_quote(){
                 //query
@@ -106,6 +189,8 @@
                 return false;
             }
 
+
+            //update
             public function update(){
                 //query
                 $query= 'UPDATE ' . $this->table . '
@@ -122,7 +207,7 @@
 
                 //clean
                 $this->quote = htmlspecialchars(strip_tags($this->quote));
-                $this->authorId = htmlspecialchars(strip_tags($this->authorID));
+                $this->authorId = htmlspecialchars(strip_tags($this->authorId));
                 $this->categoryId = htmlspecialchars(strip_tags($this->categoryId));
                 $this->id = htmlspecialchars(strip_tags($this->id));
 

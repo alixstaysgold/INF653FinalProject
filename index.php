@@ -46,5 +46,33 @@ $authors = $author->read();
 $categories = $category->read();
 $quotes = $quote->read();
 
-include ('view/quotes_list.php');
+
+if($authorId && $categoryId)
+        {
+            $quotes = $quote->read_by_cat_auth($authorId, $categoryId);
+            $authors = $author->read();
+            $categories = $category->read();
+            include('view/quotes_list.php');
+            
+        }
+        else if($authorId)
+        {
+            $quotes = $quote->read_by_author($authorId);
+            $authors = $author->read();
+            $categories = $category->read();
+            include('view/quotes_list.php');
+            
+        }
+        else if($categoryId)
+        {
+            $quotes = $quote->read_by_category($categoryId);
+            $authors = $author->read();
+            $categories = $category->read();
+            include('view/quotes_list.php');
+            
+        }
+        else
+        {
+            include('view/quotes_list.php');
+        }          
 
