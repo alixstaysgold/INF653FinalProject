@@ -27,10 +27,10 @@
         </select> 
         <br>
         
-        <button type="submit" id="submitbutton">Search</button><hr>
+        <button type="submit" id="submitbutton">Search</button>
+        <a href=".">Reset List </a>  <hr>
 
-    </form>     
-            <br>
+    </form>   
             </div>
 </section> 
 

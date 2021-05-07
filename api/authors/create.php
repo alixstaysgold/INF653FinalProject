@@ -19,7 +19,6 @@ $author = new Author($db);
 // get data
 $data = !empty((file_get_contents("php://input"))) ? json_decode(file_get_contents("php://input")) : die();
 
-$author->id = $data->id;
 $author->author = $data->author;
 
 // create

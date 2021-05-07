@@ -95,18 +95,18 @@ class Category {
             category = :category
 
             WHERE
-                id=id';
+                id=:id';
         
         //prepare
         $stmt=$this->conn->prepare($query);
 
         //clean
         $this->category = htmlspecialchars(strip_tags($this->category));
-        
+        $this->id = htmlspecialchars(strip_tags($this->id));
 
         //bind
         $stmt->bindParam(':category', $this->category);
-        
+        $stmt->bindParam(':id',$this->id);
 
         //execute
         if($stmt->execute()){
@@ -120,7 +120,7 @@ class Category {
 
     public function delete(){
         //query
-        $query = 'DLETE FROM ' . $this->table . ' 
+        $query = 'DELETE FROM ' . $this->table . ' 
                 WHERE id = :id';
         
         //prepare
@@ -130,7 +130,7 @@ class Category {
         $this->id = htmlspecialchars(strip_tags($this->id));
 
         //bind
-        $stmt = bindParam(':id', $this->id);
+        $stmt -> bindParam(':id', $this->id);
 
         //execute
         if($stmt->execute()){

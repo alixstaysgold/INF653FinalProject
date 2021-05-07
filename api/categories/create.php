@@ -19,7 +19,6 @@ $category = new Category($db);
 // get data
 $data = !empty((file_get_contents("php://input"))) ? json_decode(file_get_contents("php://input")) : die();
 
-$category->id = $data->id;
 $category->category = $data->category;
 
 // create

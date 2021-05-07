@@ -93,18 +93,18 @@ class Author {
                 author = :author
 
             WHERE
-                id=id';
+                id= :id';
         
         //prepare
         $stmt=$this->conn->prepare($query);
 
         //clean
         $this->author = htmlspecialchars(strip_tags($this->author));
-        
+        $this->id = htmlspecialchars(strip_tags($this->id));
 
         //bind
         $stmt->bindParam(':author', $this->author);
-        
+        $stmt->bindParam(':id', $this->id);
 
         //execute
         if($stmt->execute()){
@@ -118,7 +118,7 @@ class Author {
 
     public function delete(){
         //query
-        $query = 'DLETE FROM ' . $this->table . ' 
+        $query = 'DELETE FROM ' . $this->table . ' 
                 WHERE id = :id';
         
         //prepare
@@ -128,7 +128,7 @@ class Author {
         $this->id = htmlspecialchars(strip_tags($this->id));
 
         //bind
-        $stmt = bindParam(':id', $this->id);
+        $stmt -> bindParam(':id', $this->id);
 
         //execute
         if($stmt->execute()){

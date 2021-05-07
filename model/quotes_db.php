@@ -155,7 +155,7 @@
 
             //create new
 
-            public function create_quote(){
+            public function create(){
                 //query
                 $query = 'INSERT INTO ' . $this->table . '
                         SET
@@ -168,7 +168,7 @@
 
                 //clean
                 $this->quote = htmlspecialchars(strip_tags($this->quote));
-                $this->authorId = htmlspecialchars(strip_tags($this->authorID));
+                $this->authorId = htmlspecialchars(strip_tags($this->authorId));
                 $this->categoryId = htmlspecialchars(strip_tags($this->categoryId));
 
                 //bind
@@ -196,11 +196,11 @@
                 $query= 'UPDATE ' . $this->table . '
                     SET
                         quote = :quote,
-                        authorId= :authorId,
-                        categoryId= :categoryId
+                        authorId = :authorId,
+                        categoryId = :categoryId
 
                     WHERE
-                        id=id';
+                        id=:id';
                 
                 //prepare
                 $stmt=$this->conn->prepare($query);
@@ -229,7 +229,7 @@
 
             public function delete(){
                 //query
-                $query = 'DLETE FROM ' . $this->table . ' 
+                $query = 'DELETE FROM ' . $this->table . ' 
                         WHERE id = :id';
                 
                 //prepare
@@ -239,7 +239,7 @@
                 $this->id = htmlspecialchars(strip_tags($this->id));
 
                 //bind
-                $stmt = bindParam(':id', $this->id);
+                $stmt -> bindParam(':id', $this->id);
 
                 //execute
                 if($stmt->execute()){

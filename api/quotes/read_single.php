@@ -23,9 +23,9 @@ $quote->read_single();
 $quote_array = array(
     'id' => $quote->id,
     'quote' => $quote->quote,
-    'authorid' => $quote->authorId,
+    'authorId' => $quote->authorId,
     'author' => $quote->author,
-    'categoryid' => $quote->categoryId,
+    'categoryId' => $quote->categoryId,
     'category' => $quote->category
 );
 

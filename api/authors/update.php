@@ -7,7 +7,7 @@ header('Access-Control-Allow-Headers: Access-Control-Allow-Headers,Content-Type,
 
 
 require('../../config/database.php');
-require('../../models/authors_db.php');
+require('../../model/authors_db.php');
 
 // Instantiate DB & Connect
 $database = new Database();
