@@ -37,6 +37,14 @@ if(!$authorId)
     $authorId = filter_input(INPUT_GET, 'authorId', FILTER_VALIDATE_INT);
 }
 
+$id = filter_input(INPUT_POST, 'id', FILTER_VALIDATE_INT);
+if(!$id)
+{
+    $id= filter_input(INPUT_GET, 'id', FILTER_VALIDATE_INT);
+}
+
+
+
 // Get Request Quote Data 
 if ($authorId) { $quote->authorId = $authorId; }
 if ($categoryId) { $quote->categoryId = $categoryId; }
@@ -73,6 +81,7 @@ if($authorId && $categoryId)
         }
         else
         {
+        
             include('view/quotes_list.php');
         }          
 

@@ -43,7 +43,7 @@ if ($authorId && $categoryId) {
     if ($num > 0) {
         // Quote array
         $quotes_arr = array();
-        $quotes_arr['data'] = array();
+        
     
         while($row = $result->fetch(PDO::FETCH_ASSOC)){
             extract($row);
@@ -57,7 +57,7 @@ if ($authorId && $categoryId) {
                 'category' => $category
             );
             // Push to "data"
-            array_push($quotes_arr['data'],$quote_item);
+            array_push($quotes_arr,$quote_item);
         }
         
         // Convert to JSON & output

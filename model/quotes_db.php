@@ -193,7 +193,7 @@
             //update
             public function update(){
                 //query
-                $query= 'UPDATE ' . $this->table . '
+                $query= 'UPDATE quotes
                     SET
                         quote = :quote,
                         authorId = :authorId,

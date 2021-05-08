@@ -1,10 +1,10 @@
 <?php include ('header.php'); 
 ?>
 
-
+<div id=search>
 <section id="dropdowns">
  <form action="." method="get" id="select_author" class="filter_quotes">
-        <select name="authorId" id="dropdown">
+        <select style="width:150px" name="authorId" id="dropdown">
             <option value="0">Author</option>
             <?php foreach ($authors as $author) : ?>
                 <option value="<?= $author['id'] ?>">
@@ -17,7 +17,7 @@
     <br>
     
     
-    <select name="categoryId" id="dropdown">
+    <select style="width:150px" name="categoryId" id="dropdown">
             <option value="0">Category</option>
             <?php foreach ($categories as $category) : ?>           
                 <option value="<?= $category['id'] ?>">
@@ -28,43 +28,29 @@
         <br>
         
         <button type="submit" id="submitbutton">Search</button>
-        <a href=".">Reset List </a>  <hr>
+        <button onclick="location.href='.'" type="button">
+         Reset List</button> <hr>
 
     </form>   
             </div>
 </section> 
+</div>
 
 
-
-<div class = "quotes">
-                <section>
-                <?php if($quotes) { ?>
-                
-                <table id="quotest">
-                <tr>
-                    <th>Quote</th>
-                    <th>Author</th>
-                    <th>Category</th>
-                    
-                </tr><br>
-                <?php foreach ($quotes as $quote) : ?>
-                <tr>
-                    <td>"<?php echo $quote['quote']; ?>"</td>
-                    <td><?php echo $quote['author']; ?></td>
-                    <td><?php echo $quote['category']; ?></td>
-                    <br>
-                    
-                    
-                </tr>
-                
-                <?php endforeach; ?>
-                </table>
-                </section>
-                    </div>
-                    <?php }  ?>
-
-                   
-
+<div id="list_quotes">
+<?php if ($quotes) { ?>
+    <?php foreach ($quotes as $quote) : ?>
+    <div class="row">
+        <div class="list_quotes">
+        <?= $quote['quote'] ?> 
+        <div id="author_list"> - <?= $quote['author'] ?>, <?= $quote['category'] ?>  </div> 
+        </div><br><br>
+    </div>
+    <?php endforeach; ?>
+<?php } else { ?> 
+    <p> No quotes exist. </p>
+<?php } ?>
+</div>
 
 
 

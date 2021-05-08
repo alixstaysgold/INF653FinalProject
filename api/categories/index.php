@@ -22,7 +22,7 @@ $num = $result->rowCount();
 if ($num > 0) {
     // Author array
     $cats_arr = array();
-    $cats_arr['data'] = array();
+    
 
     while($row = $result->fetch(PDO::FETCH_ASSOC)){
         extract($row);
@@ -32,7 +32,7 @@ if ($num > 0) {
             'category' => $category
         );
         // Push to "data"
-        array_push($cats_arr['data'],$cat_item);
+        array_push($cats_arr,$cat_item);
     }
     
     // Convert to JSON & output

@@ -90,12 +90,10 @@ class Category {
 
     public function update(){
         //query
-        $query= 'UPDATE ' . $this->table . '
-            SET
-            category = :category
-
+        $query= 'UPDATE categories
+            SET category = :category
             WHERE
-                id=:id';
+                id = :id';
         
         //prepare
         $stmt=$this->conn->prepare($query);
@@ -130,7 +128,7 @@ class Category {
         $this->id = htmlspecialchars(strip_tags($this->id));
 
         //bind
-        $stmt -> bindParam(':id', $this->id);
+        $stmt->bindParam(':id', $this->id);
 
         //execute
         if($stmt->execute()){
