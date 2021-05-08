@@ -1,0 +1,268 @@
+@media only screen and (min-width: 1050px) {
+    
+
+    html {
+        background: url("grey.jpg") repeat;
+        font-family: 'Courier New', Courier, monospace;
+        color: black;
+        font-size: 35px;
+        font-weight:bold;
+    }
+
+    body {
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+        background-color:rgba(85,107,47,0.5);
+        padding-top:5px;
+    }
+
+h1{
+    font-size:50px;
+    text-align:center;
+}
+
+#search{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-right:5px;
+    padding-bottom:25px;
+}
+
+#list_quotes{
+    margin:auto;
+    padding-left:20px;
+}
+
+select{
+    text-align-last:center;
+    direction: ltr;
+}
+.btn {
+    border: 5px solid #2c3e50;
+    color: #2c3e50;
+    display: block;
+    font-family: 'trebuchet ms';
+    font-size: 14px;
+    letter-spacing: 0.1rem;
+    padding: 5px;
+    position: relative;
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+  
+  .btn::before {
+    content: "";
+    background-color: #E26A6A;
+    box-shadow: 5px 5px 0 #F1C40F, 
+                10px 10px 0 #3498DB;
+    position: absolute;
+    left: 0.125rem;
+    top: 0.25rem;
+    height: 102%;
+    width: 110%;
+    z-index: -1;
+    transition: all 0.4s ease;
+  }
+  
+  .btn:hover::before {
+    box-shadow: none;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+#buttons {
+    display:flex;
+    justify-content:space-between;
+}
+
+.divider{
+    width:25px;
+    height:auto;
+    display:inline-block;
+}
+}
+
+
+@media only screen and (min-width: 768px) and (max-width:1049px){
+
+    html {
+        background: url("grey.jpg") repeat;
+        font-family: 'Courier New', Courier, monospace;
+        color: black;
+        font-size: 30px;
+        font-weight:bold;
+    }
+
+    body {
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+        background-color:rgba(85,107,47,0.5);
+        padding-top:5px;
+    }
+
+    h1{
+        font-size:40px;
+        text-align:center;
+    }
+
+    #search{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-right:5px;
+        padding-bottom:5px;
+    }
+
+    #list_quotes{
+        margin:auto;
+        padding-left:20px;
+    }
+
+    select{
+        text-align-last:center;
+        direction: ltr;
+    }
+    .btn {
+        border: 5px solid #2c3e50;
+        color: #2c3e50;
+        display: block;
+        font-family: 'trebuchet ms';
+        font-size: 14px;
+        letter-spacing: 0.1rem;
+        padding: 5px;
+        position: relative;
+        text-decoration: none;
+        text-transform: uppercase;
+      }
+      
+      .btn::before {
+        content: "";
+        background-color: #E26A6A;
+        box-shadow: 5px 5px 0 #F1C40F, 
+                    10px 10px 0 #3498DB;
+        position: absolute;
+        left: 0.125rem;
+        top: 0.25rem;
+        height: 102%;
+        width: 110%;
+        z-index: -1;
+        transition: all 0.4s ease;
+      }
+      
+      .btn:hover::before {
+        box-shadow: none;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+      }
+
+    #buttons {
+        display:flex;
+        justify-content:space-between;
+    }
+
+    .divider{
+        width:25px;
+        height:auto;
+        display:inline-block;
+    }
+
+}
+
+
+
+
+@media only screen and (max-width: 767px) {
+
+    html {
+        background: url("grey.jpg") repeat;
+        font-family: 'Courier New', Courier, monospace;
+        color: black;
+        font-size: 24px;
+        font-weight:bold;
+    }
+
+    body {
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+        background-color:rgba(85,107,47,0.5);
+        padding-top:5px;
+    }
+
+    h1{
+        font-size:36px;
+        text-align:center;
+    }
+
+    #search{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-right:5px;
+        padding-bottom:5px;
+    }
+
+    #list_quotes{
+        margin:auto;
+        padding-left:20px;
+        
+    }
+
+    select{
+        text-align-last:center;
+        direction: ltr;
+    }
+    .btn {
+        border: 5px solid #2c3e50;
+        color: #2c3e50;
+        display: block;
+        font-family: 'trebuchet ms';
+        font-size: 12px;
+        letter-spacing: 0.1rem;
+        padding: 5px;
+        position: relative;
+        text-decoration: none;
+        text-transform: uppercase;
+      }
+      
+      .btn::before {
+        content: "";
+        background-color: #E26A6A;
+        box-shadow: 2.5px 2.5px 0 #F1C40F, 
+                    5px 5px 0 #3498DB;
+        position: absolute;
+        left: 0.125rem;
+        top: 0.25rem;
+        height: 102%;
+        width: 110%;
+        z-index: -1;
+        transition: all 0.4s ease;
+      }
+      
+      .btn:hover::before {
+        box-shadow: none;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+      }
+
+    #buttons {
+        display:flex;
+        justify-content:space-between;
+    }
+
+    .divider{
+        width:60px;
+        height:auto;
+        display:inline-block;
+    }
+
+}

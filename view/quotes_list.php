@@ -4,7 +4,7 @@
 <div id=search>
 <section id="dropdowns">
  <form action="." method="get" id="select_author" class="filter_quotes">
-        <select style="width:150px" name="authorId" id="dropdown">
+        <select style="width:250px" name="authorId" id="dropdown">
             <option value="0">Author</option>
             <?php foreach ($authors as $author) : ?>
                 <option value="<?= $author['id'] ?>">
@@ -17,7 +17,7 @@
     <br>
     
     
-    <select style="width:150px" name="categoryId" id="dropdown">
+    <select style="width:250px" name="categoryId" id="dropdown">
             <option value="0">Category</option>
             <?php foreach ($categories as $category) : ?>           
                 <option value="<?= $category['id'] ?>">
@@ -26,11 +26,12 @@
                 <?php endforeach; ?>
         </select> 
         <br>
-        
-        <button type="submit" id="submitbutton">Search</button>
-        <button onclick="location.href='.'" type="button">
+        <div id= buttons>
+        <button class ="btn" type="submit" id="submitbutton">Search</button>
+        <div class="divider"></div>
+        <button class="btn" onclick="location.href='.'" type="button">
          Reset List</button> <hr>
-
+            </div>
     </form>   
             </div>
 </section> 
