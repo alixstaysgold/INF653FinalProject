@@ -44,7 +44,7 @@
     <div class="row">
         <div class="list_quotes">
         <?= $quote['quote'] ?> 
-        <div id="author_list"> - <?= $quote['author'] ?>, <?= $quote['category'] ?>  </div> 
+        <div id="author_list">    &emsp;  - <?= $quote['author'] ?>, <?= $quote['category'] ?>  </div> 
         </div><br><br>
     </div>
     <?php endforeach; ?>
