@@ -19,9 +19,7 @@ $quote = new Quote($db);
 // Get raw posted data
 $data = !empty((file_get_contents("php://input"))) ? json_decode(file_get_contents("php://input")) : die();
 
-$quote->quote = $data->quote;
-$quote->authorId = $data->authorId;
-$quote->categoryId = $data->categoryId;
+$quote->id = $data->id;
 
 // Create Post
 if ($quote->delete()) {

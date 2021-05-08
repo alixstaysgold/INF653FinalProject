@@ -8,4 +8,4 @@
     <link rel="stylesheet" type="text/css" href="./view/css/main.scss">
 </head>
 <body>
-<header><h1>Quote Database<h1></header>
+<header><h1>INF653 Quote Database & API<h1></header>
