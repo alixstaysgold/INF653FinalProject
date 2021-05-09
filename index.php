@@ -25,29 +25,22 @@ if(!$action)
     }
 }
 
-$categoryId = filter_input(INPUT_POST, 'categoryId', FILTER_VALIDATE_INT);
-if(!$categoryId)
-{
-    $categoryId = filter_input(INPUT_GET, 'categoryId', FILTER_VALIDATE_INT);
-}
+$categoryId = filter_input(INPUT_GET, 'categoryId', FILTER_VALIDATE_INT);
 
-$authorId = filter_input(INPUT_POST, 'authorId', FILTER_VALIDATE_INT);
-if(!$authorId)
-{
-    $authorId = filter_input(INPUT_GET, 'authorId', FILTER_VALIDATE_INT);
-}
 
-$id = filter_input(INPUT_POST, 'id', FILTER_VALIDATE_INT);
-if(!$id)
-{
-    $id= filter_input(INPUT_GET, 'id', FILTER_VALIDATE_INT);
-}
+$authorId = filter_input(INPUT_GET, 'authorId', FILTER_VALIDATE_INT);
+
+
+$id = filter_input(INPUT_GET, 'id', FILTER_VALIDATE_INT);
+
 
 
 
 // Get Request Quote Data 
 if ($authorId) { $quote->authorId = $authorId; }
 if ($categoryId) { $quote->categoryId = $categoryId; }
+if ($id) { $quote->id= $id;}
+
 
 // Read Data
 $authors = $author->read();
