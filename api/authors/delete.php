@@ -21,7 +21,7 @@ $data = !empty((file_get_contents("php://input"))) ? json_decode(file_get_conten
 
 $author->id = $data->id;
 
-// Create Post
+// delete Post
 if ($author->delete()) {
     echo json_encode(
         array('message' => 'Author deleted')

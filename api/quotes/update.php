@@ -2,7 +2,7 @@
 // Headers
 header('Access-Control-Allow-Origin: *');
 header('Content-Type: application/json');
-header('Access-Control-Allow-Methods: POST');
+header('Access-Control-Allow-Methods: PUT');
 header('Access-Control-Allow-Headers: Access-Control-Allow-Headers,Content-Type,Access-Control-Allow-Methods,Authorization,X-Requested-With');
 
 
@@ -17,12 +17,18 @@ $db = $database->connect();
 $quote = new Quote($db);
 
 // Get raw posted data
-$data = !empty((file_get_contents("php://input"))) ? json_decode(file_get_contents("php://input")) : die();
+$data = json_decode(file_get_contents("php://input"));
 
-$quote->id = $data->id;
-$quote->quote = $data->quote;
-$quote->authorId = $data->authorId;
-$quote->categoryId = $data->categoryId;
+if ( 
+    !empty($data->quote) && 
+    !empty($data->authorId) && 
+    !empty($data->categoryId) && 
+    !empty($data->id)
+    ) {
+        $quote->id = $data->id;
+        $quote->quote = $data->quote;
+        $quote->authorId = $data->authorId;
+        $quote->categoryId = $data->categoryId;}
 
 // Create Post
 if ($quote->update()) {

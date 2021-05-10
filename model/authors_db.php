@@ -1,5 +1,7 @@
 <?php
 
+
+
 class Author {
     //db
     private $conn;
@@ -36,7 +38,7 @@ class Author {
               id,
               author
             FROM
-              ' . $this->table . '
+              authors
           WHERE id = ?
           LIMIT 0,1';
     
@@ -103,8 +105,8 @@ class Author {
         $this->id = htmlspecialchars(strip_tags($this->id));
 
         //bind
-        $stmt->bindParam(':author', $this->author);
-        $stmt->bindParam(':id', $this->id);
+        $stmt-> bindParam(':author', $this->author);
+        $stmt-> bindParam(':id', $this->id);
 
         //execute
         if($stmt->execute()){

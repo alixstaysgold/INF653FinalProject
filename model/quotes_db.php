@@ -12,6 +12,7 @@
         public $quote;
         public $author;
         public $category;
+        public $limit;
     
 
         //Constructor with database

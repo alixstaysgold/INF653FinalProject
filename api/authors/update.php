@@ -17,12 +17,14 @@ $db = $database->connect();
 $author = new Author($db);
 
 // Get raw posted data
-$data = !empty((file_get_contents("php://input"))) ? json_decode(file_get_contents("php://input")) : die();
+$data = json_decode(file_get_contents("php://input"));
 
+if (!empty($data->author) && !empty($data->id)){
 $author->id = $data->id;
 $author->author = $data->author;
+}
 
-// Create Post
+// update Post
 if ($author->update()) {
     echo json_encode(
         array('message' => 'Author updated')
