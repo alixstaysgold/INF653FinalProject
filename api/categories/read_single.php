@@ -22,7 +22,7 @@ $category->read_single();
 // Create array
 $cat_arr = array(
     'id' => $category->id,
-    'author' => $category->category
+    'category' => $category->category
 );
 
 //Convert to JSON 

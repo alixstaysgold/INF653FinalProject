@@ -1,5 +1,5 @@
 <?php
-class Database{
+/* class Database{
     private  $host = 'localhost';
     private  $db_name = "quotesdb";
     private  $username = 'root';
@@ -22,9 +22,9 @@ class Database{
   
         return $this->conn;
       }
-    }
+    } */
 
-    /* class Database{
+    class Database{
       private  $host = 'y5svr1t2r5xudqeq.cbetxkdyhwsb.us-east-1.rds.amazonaws.com';
       private  $db_name = "exzjt19ap2vi79c7";
       private  $username = 'hoh9jdjgevre8syx';
@@ -50,5 +50,5 @@ class Database{
       }
 
 
- */
+ 
     
