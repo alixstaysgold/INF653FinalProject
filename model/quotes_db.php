@@ -153,7 +153,7 @@
                 $this->quote = $row['quote'];
                 $this->category = $row['category'];
                 $this->author = $row['author'];}
-            }
+                }
 
             //create new
 

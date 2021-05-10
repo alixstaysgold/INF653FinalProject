@@ -19,7 +19,7 @@ $quote = new Quote($db);
 // Get raw posted data
 $data = json_decode(file_get_contents("php://input"));
 
-if(!empty($quote->quote) && !empty($quote->authorId) && !empty($quote->categoryId)){
+if(!empty($data->quote) && !empty($data->authorId) && !empty($data->categoryId)){
 $quote->quote = $data->quote;
 $quote->authorId = $data->authorId;
 $quote->categoryId = $data->categoryId;}
