@@ -27,19 +27,22 @@ if(!$action)
 
 $categoryId = filter_input(INPUT_GET, 'categoryId', FILTER_VALIDATE_INT);
 
-
 $authorId = filter_input(INPUT_GET, 'authorId', FILTER_VALIDATE_INT);
-
 
 $id = filter_input(INPUT_GET, 'id', FILTER_VALIDATE_INT);
 
+$quote = filter_input(INPUT_POST, 'quote', FILTER_SANITIZE_STRING);
 
+$author = filter_input(INPUT_POST, 'author', FILTER_SANITIZE_STRING);
+
+$category = filter_input(INPUT_POST, 'category', FILTER_SANITIZE_STRING);
 
 
 // Get Request Quote Data 
 if ($authorId) { $quote->authorId = $authorId; }
 if ($categoryId) { $quote->categoryId = $categoryId; }
 if ($id) { $quote->id= $id;}
+if ($quote) { $quote->quote = $quote;}
 
 
 // Read Data

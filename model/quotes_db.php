@@ -148,10 +148,11 @@
                 $row = $stmt->fetch(PDO::FETCH_ASSOC);
 
                 //set properties
+                if( is_array($row)){
                 $this->id = $row['id'];
                 $this->quote = $row['quote'];
                 $this->category = $row['category'];
-                $this->author = $row['author'];
+                $this->author = $row['author'];}
             }
 
             //create new

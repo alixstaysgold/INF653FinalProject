@@ -10,20 +10,21 @@ require('../../model/authors_db.php');
 $database = new Database();
 $db = $database->connect();
 
-// Instantiate quote object
+// Instantiate Author Object
 $author = new Author($db);
 
-// Get ID from URL
+// Get ID
 $author->id = filter_input(INPUT_GET, 'id', FILTER_VALIDATE_INT);
 
-// Get quote
+
+// Get Author
 $author->read_single();
 
-// Create array
+// Create Array
 $author_arr = array(
     'id' => $author->id,
-    'author' => $author->author
+    'author' => $author->author,
 );
 
-//Convert to JSON 
+// Turn to JSON
 print_r(json_encode($author_arr));
