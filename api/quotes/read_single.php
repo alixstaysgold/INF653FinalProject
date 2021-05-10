@@ -20,12 +20,11 @@ $quote->id = filter_input(INPUT_GET, 'id', FILTER_VALIDATE_INT);
 $quote->read_single();
 
 // Create array
+
 $quote_array = array(
     'id' => $quote->id,
     'quote' => $quote->quote,
-    'authorId' => $quote->authorId,
-    'author' => $quote->author,
-    'categoryId' => $quote->categoryId,
+    'author' => $quote->author,   
     'category' => $quote->category
 );
 

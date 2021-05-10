@@ -17,9 +17,10 @@ $db = $database->connect();
 $author = new Author($db);
 
 // Get raw posted data
-$data = !empty((file_get_contents("php://input"))) ? json_decode(file_get_contents("php://input")) : die();
+$data =json_decode(file_get_contents("php://input"));
 
-$author->id = $data->id;
+if(!empty($author->id)){
+$author->id = $data->id;}
 
 // delete Post
 if ($author->delete()) {

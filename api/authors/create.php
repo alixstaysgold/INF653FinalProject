@@ -17,9 +17,10 @@ $db = $database->connect();
 $author = new Author($db);
 
 // get data
-$data = !empty((file_get_contents("php://input"))) ? json_decode(file_get_contents("php://input")) : die();
+$data = json_decode(file_get_contents("php://input"));
 
-$author->author = $data->author;
+if(!empty($author->author)){
+$author->author = $data->author;}
 
 // create
 if ($author->create()) {

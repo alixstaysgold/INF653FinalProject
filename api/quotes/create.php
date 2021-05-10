@@ -17,11 +17,12 @@ $db = $database->connect();
 $quote = new Quote($db);
 
 // Get raw posted data
-$data = !empty((file_get_contents("php://input"))) ? json_decode(file_get_contents("php://input")) : die();
+$data = json_decode(file_get_contents("php://input"));
 
+if(!empty($quote->quote) && !empty($quote->authorId) && !empty($quote->categoryId)){
 $quote->quote = $data->quote;
 $quote->authorId = $data->authorId;
-$quote->categoryId = $data->categoryId;
+$quote->categoryId = $data->categoryId;}
 
 // Create Post
 if ($quote->create()) {

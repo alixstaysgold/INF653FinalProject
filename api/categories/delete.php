@@ -17,9 +17,10 @@ $db = $database->connect();
 $category = new Category($db);
 
 // Get raw posted data
-$data = !empty((file_get_contents("php://input"))) ? json_decode(file_get_contents("php://input")) : die();
+$data = json_decode(file_get_contents("php://input"));
 
-$category->id = $data->id;
+if (!empty($category->id)){
+$category->id = $data->id;}
 
 // Create Post
 if ($category->delete()) {

@@ -17,9 +17,10 @@ $db = $database->connect();
 $category = new Category($db);
 
 // get data
-$data = !empty((file_get_contents("php://input"))) ? json_decode(file_get_contents("php://input")) : die();
+$data = json_decode(file_get_contents("php://input"));
 
-$category->category = $data->category;
+if (!empty($category->category));{
+$category->category = $data->category;}
 
 // create
 if ($category->create()) {

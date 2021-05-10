@@ -17,9 +17,10 @@ $db = $database->connect();
 $quote = new Quote($db);
 
 // Get raw posted data
-$data = !empty((file_get_contents("php://input"))) ? json_decode(file_get_contents("php://input")) : die();
+$data =json_decode(file_get_contents("php://input"));
 
-$quote->id = $data->id;
+if(!empty($quote->id)){
+$quote->id = $data->id;}
 
 // Create Post
 if ($quote->delete()) {

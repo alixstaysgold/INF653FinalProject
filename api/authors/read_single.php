@@ -21,6 +21,7 @@ $author->id = filter_input(INPUT_GET, 'id', FILTER_VALIDATE_INT);
 $author->read_single();
 
 // Create Array
+
 $author_arr = array(
     'id' => $author->id,
     'author' => $author->author,
