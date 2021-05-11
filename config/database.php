@@ -22,9 +22,9 @@
   
         return $this->conn;
       }
-    }
- */
-     class Database
+    } */
+
+  class Database
 {
     
     public function connect()
@@ -49,4 +49,3 @@
     }
 }
 
- 

@@ -28,13 +28,14 @@ if (
         $quote->id = $data->id;
         $quote->quote = $data->quote;
         $quote->authorId = $data->authorId;
-        $quote->categoryId = $data->categoryId;}
-
+        $quote->categoryId = $data->categoryId;
+        if ($quote->update()) {
+            echo json_encode(
+                array('message' => 'Quote updated')
+            );
+        }
 // Create Post
-if ($quote->update()) {
-    echo json_encode(
-        array('message' => 'Quote updated')
-    );
+
 } else {
     echo json_encode(
         array('message' => 'Quote not updated')
